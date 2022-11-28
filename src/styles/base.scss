@@ -1,0 +1,31 @@
+/*****************
+ ***** Colors ****** 
+ ****************/
+
+$blue: #255fff;
+$dark-blue: #171c54;
+$grey: #cac6c3;
+$text-color: #868aa7;
+$lineHeight: 1.25em;
+
+%h {
+  font-weight: 450;
+  color: $dark-blue;
+}
+
+%display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  @extend %h;
+  font-size: 35px;
+}
+
+h3 {
+  @extend %h;
+  font-size: 17px;
+  font-weight: 600;
+}
