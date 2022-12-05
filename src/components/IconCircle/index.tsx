@@ -1,9 +1,7 @@
 import style from "./index.module.scss";
+import { props as AppProps } from "./types";
 
-type props = {
-  Icon: JSX.Element | null;
-};
-function IconCircle({ Icon }: props): JSX.Element {
+function IconCircle({ Icon }: AppProps): JSX.Element {
   return <div className={style["container"]}>{Icon}</div>;
 }
 

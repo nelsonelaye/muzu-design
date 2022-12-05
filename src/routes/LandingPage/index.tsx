@@ -1,6 +1,13 @@
 import { useState, useCallback } from "react";
 import style from "./index.module.scss";
 import "./index.module.scss";
+import {
+  product as ProductType,
+  team as TeamType,
+  facts as FactsType,
+  job as JobType,
+  testimonial as TestimonialType,
+} from "./types";
 
 // COMPONENTS
 import Header from "../../components/Header";
@@ -8,6 +15,7 @@ import Button from "../../components/Button";
 import IconCircle from "../../components/IconCircle";
 import ItemsIcons from "../../components/items_with_icons";
 import Footer from "../../components/Footer";
+import Services from "../../components/Services";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { FaShoppingBag } from "react-icons/fa";
 import { HiOutlineArrowSmRight } from "react-icons/hi";
@@ -30,50 +38,10 @@ import c2 from "../../assets/images/customer2.jpg";
 import c3 from "../../assets/images/customer3.jpg";
 import contactImage from "../../assets/images/customer care.jpg";
 
-/****************************
- *********** TYPESCRIPT TYPES FOR LIST OF DATA BEING USED IN THIS COMPONENT **************************/
-
-type product = {
-  id: string;
-  photo: string;
-  title: string;
-  description: string;
-};
-
-type teamType = {
-  id: string;
-  photo: string;
-  name: string;
-  role: string;
-  description: string;
-};
-
-type factsType = {
-  id: string;
-  figure: string;
-  title: string;
-};
-
-type job = {
-  id: string;
-  role: string;
-  description: string;
-  company: string;
-  years: string;
-};
-
-type testimonial = {
-  id: string;
-  name: string;
-  photo: string;
-  roleAndCompany: string;
-  testimonial: string;
-};
-
 /***********************************
  ************************ LIST OF DATA IMPLEMENTED IN THIS COMPONENTS **********************************/
 
-const products: Array<product> = [
+const products: Array<ProductType> = [
   {
     id: "1",
     photo: pd2,
@@ -97,7 +65,7 @@ const products: Array<product> = [
   },
 ];
 
-const team: Array<teamType> = [
+const team: Array<TeamType> = [
   {
     id: "1",
     photo: team1,
@@ -123,7 +91,7 @@ const team: Array<teamType> = [
   },
 ];
 
-const facts: Array<factsType> = [
+const facts: Array<FactsType> = [
   { id: "1", title: "clients", figure: "15+" },
   { id: "2", title: "awards", figure: "1K" },
   { id: "3", title: "clients", figure: "15+" },
@@ -180,7 +148,7 @@ const core_values = [
 
 const gallery_images: string[] = [gl1, gl2, gl3, gl4, gl5, gl6];
 
-const experience_list: Array<job> = [
+const experience_list: Array<JobType> = [
   {
     id: "1",
     role: "graphics designer",
@@ -215,7 +183,7 @@ const experience_list: Array<job> = [
   },
 ];
 
-const testimonials: Array<testimonial> = [
+const testimonials: Array<TestimonialType> = [
   {
     id: "1",
     name: "Janet Jackson",
@@ -379,7 +347,6 @@ export default function LandingPage(): JSX.Element {
             <div className={style["experience_details"]} key={prop.id}>
               <IconCircle Icon={<FaShoppingBag />} />
               <div className={style["experience_content"]}>
-                {" "}
                 <h3>{prop.role}</h3>
                 <div className={style["duration"]}>
                   <span>{prop.company}</span>
@@ -392,7 +359,7 @@ export default function LandingPage(): JSX.Element {
         </div>
       </section>
 
-      <ItemsIcons data={services} heading="Services" />
+      <Services data={services} heading="Services" />
 
       <section className={style["gallery"]}>
         <h2>Gallery</h2>

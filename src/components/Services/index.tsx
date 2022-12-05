@@ -1,8 +1,12 @@
 import React from "react";
 import style from "./index.module.scss";
-import IconCircle from "../IconCircle";
+// import IconCircle from "../IconCircle";
 import { FaStaylinked } from "react-icons/fa";
 import { props as AppProps } from "./types";
+
+const IconCircle = ({ Icon }: AppProps): JSX.Element => {
+  return <div className={style["container"]}>{Icon}</div>;
+};
 
 const index = ({ data, heading }: AppProps): JSX.Element => {
   return (
@@ -22,3 +26,5 @@ const index = ({ data, heading }: AppProps): JSX.Element => {
 };
 
 export default index;
+
+// export default IconCircle;

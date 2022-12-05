@@ -696,6 +696,22 @@
       width: 300px;
     }
   }
+
+  .experience {
+    .experience_list {
+      width: 70%;
+    }
+    .experience_details {
+      width: 60%;
+      .experience_content {
+        width: 85%;
+      }
+
+      .experience_content > span {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1440px) {
