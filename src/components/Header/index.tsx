@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
-import logo from "../../assets/images/iQube.png";
+import logo from "../../assets/images/mylogo.png";
 import { HiOutlineBars2 } from "react-icons/hi2";
 
 export default function Header(): JSX.Element {
@@ -14,7 +14,7 @@ export default function Header(): JSX.Element {
     <section className={style["holder"]}>
       <nav className={style["nav_hold"]}>
         <div className={style["page_logo"]}>
-          <img src={logo} alt="iQue logo" />
+          <img src={logo} alt="my logo" />
         </div>
         <ul className={style["navigations"]}>
           {menuItems.map((prop) => (
